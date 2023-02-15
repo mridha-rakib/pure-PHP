@@ -16,16 +16,17 @@ function minimumJumps(&$arr, $n)
     $jump = 1;
 
     for ($i = 1; $i < $n; $i++) {
-        if ($i == $n - 1)
+        if ($i == $n - 1) {
             return $jump;
+        }
 
-        $maxReach = max($maxReach, $i + $arr[i]);
+        $maxReach = max($maxReach, $i + $arr[$i]);
         $step--;
 
         if ($step == 0) {
             $jump++;
 
-            if ($i >= maxReach)
+            if ($i >= $maxReach)
                 return -1;
 
             $step = $maxReach - $i;
